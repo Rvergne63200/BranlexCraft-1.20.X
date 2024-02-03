@@ -1,7 +1,6 @@
 package net.peg.branlexcraft.item.custom;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;

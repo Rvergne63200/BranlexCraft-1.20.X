@@ -1,6 +1,5 @@
 package net.peg.branlexcraft.item;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -15,7 +14,7 @@ public enum ModToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Ingredient repairIngredient;
 
-    private ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Ingredient repairIngredient)
+    ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Ingredient repairIngredient)
     {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
