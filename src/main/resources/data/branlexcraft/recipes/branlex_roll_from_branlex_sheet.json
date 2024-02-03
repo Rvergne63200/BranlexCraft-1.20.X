@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "branlexcraft:branlex_sheet"
+    }
+  },
+  "result": {
+    "item": "branlexcraft:branlex_roll",
+    "count": 1
+  }
+}
