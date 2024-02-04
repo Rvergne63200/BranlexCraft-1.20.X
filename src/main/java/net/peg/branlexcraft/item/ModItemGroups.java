@@ -18,6 +18,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BRANLEX_SHEET);
                         entries.add(ModItems.BRANLEX_ROLL);
                         entries.add(ModItems.BRANLEX_SWORD);
+                        entries.add(ModItems.BRANLEX_BALL);
                     }).build());
 
     public static void registerItemGroups(){
