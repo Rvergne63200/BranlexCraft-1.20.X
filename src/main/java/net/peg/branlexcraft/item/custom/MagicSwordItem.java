@@ -5,11 +5,12 @@ import net.minecraft.item.*;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.peg.branlexcraft.item.ModEntityTypes;
+import net.peg.branlexcraft.BranlexCraft;
 
 public class MagicSwordItem extends SwordItem {
 
     private final ItemStack itemStack;
+
     public MagicSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings, ItemStack itemStack) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
         this.itemStack = itemStack;
@@ -18,24 +19,21 @@ public class MagicSwordItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
-
+        /*
         if (!world.isClient) {
-            BranlexProjectileEntity projectile = new BranlexProjectileEntity(ModEntityTypes.BRANLEX_PROJECTILE, world);
-            projectile.setOwner(user);
-            projectile.setVelocity(user.getRotationVector().x, user.getRotationVector().y, user.getRotationVector().z);
+            BranlexProjectileEntity projectile = new BranlexProjectileEntity(world, user);
+            projectile.setDamage(10.0f);
+            projectile.setItem(itemStack);
+            projectile.setVelocity(user.getRotationVector().multiply(3.0f));
             world.spawnEntity(projectile);
         }
+         */
 
-        /*
-
-        if (!world.isClient) {
-            SnowballEntity snowballEntity = new SnowballEntity(world, user);
-            snowballEntity.setItem(itemStack);
-            snowballEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
-            world.spawnEntity(snowballEntity);
+        if(!world.isClient){
+            BranlexProjectileEntity projectile = new BranlexProjectileEntity(user, world);
+            projectile.setVelocity(user.getRotationVector().multiply(3.0f));
+            world.spawnEntity(projectile);
         }
-        */
-
 
         return TypedActionResult.success(user.getStackInHand(hand));
     }

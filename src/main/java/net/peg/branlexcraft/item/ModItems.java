@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -16,7 +17,7 @@ public class ModItems {
     public static final Item BRANLEX_SHEET = registerItem("branlex_sheet", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_ROLL = registerItem("branlex_roll", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SWORD = registerItem("branlex_sword",
-            new MagicSwordItem(ModToolMaterials.BRANLEX, 6, -2.4f, new FabricItemSettings(), new ItemStack(ModItems.BRANLEX_ROLL)));
+            new MagicSwordItem(ModToolMaterials.BRANLEX, 6, -2.4f, new FabricItemSettings(), new ItemStack(Items.BONE_MEAL)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(BRANLEX_SHEET);
@@ -30,7 +31,6 @@ public class ModItems {
 
     public static void registerModItems() {
         BranlexCraft.LOGGER.info("Redistering Mod Items for " + BranlexCraft.MOD_ID);
-
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
     }
 }
