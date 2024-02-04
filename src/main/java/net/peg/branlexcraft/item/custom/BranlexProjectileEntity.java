@@ -1,31 +1,37 @@
 package net.peg.branlexcraft.item.custom;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.FlyingItemEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.thrown.ThrownEntity;
+import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.particle.ItemStackParticleEffect;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.math.Box;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.peg.branlexcraft.BranlexCraft;
 
-public class BranlexProjectileEntity extends ThrownEntity {
-    private int lifeTime = 0;
+public class BranlexProjectileEntity extends ThrownItemEntity {
 
     public BranlexProjectileEntity(EntityType<? extends BranlexProjectileEntity> entityType, World world) {
-        super((EntityType<? extends ThrownEntity>) entityType, world);
-        this.setBoundingBox(new Box(-0.5, 0.0, -0.5, 0.5, 1.0, 0.5));
+        super(entityType, world);
     }
 
-    protected BranlexProjectileEntity(double x, double y, double z, World world) {
-        this(BranlexCraft.BRANLEX_PROJECTILE, world);
-        this.setPosition(x, y, z);
+    public BranlexProjectileEntity(World world, LivingEntity owner) {
+        super(BranlexCraft.BRANLEX_PROJECTILE, owner, world);
     }
 
-    protected BranlexProjectileEntity(LivingEntity owner, World world) {
-        this(owner.getX(), owner.getEyeY() - (double)0.1f, owner.getZ(), world);
-        this.setOwner(owner);
+    public BranlexProjectileEntity(World world, double x, double y, double z) {
+        super(BranlexCraft.BRANLEX_PROJECTILE, x, y, z, world);
+    }
+
+    @Override
+    protected Item getDefaultItem() {
+        return Items.BONE_MEAL;
     }
 
     @Override
@@ -35,31 +41,35 @@ public class BranlexProjectileEntity extends ThrownEntity {
     }
 
     @Override
-    protected void initDataTracker() {
+    protected void onCollision(HitResult hitResult) {
+        super.onCollision(hitResult);
+        if (!this.getWorld().isClient) {
+            this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
+            this.discard();
+        }
+    }
 
+    @Override
+    public void handleStatus(byte status) {
+        if (status == EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES) {
+            ParticleEffect particleEffect = this.getParticleParameters();
+            for (int i = 0; i < 8; ++i) {
+                this.getWorld().addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+            }
+        }
+    }
+
+    private ParticleEffect getParticleParameters() {
+        return ParticleTypes.FIREWORK;
     }
 
     public void tick() {
         super.tick();
 
-        this.setPosition(getPos().add(getVelocity()));
-
-//        if(lifeTime == 0)
-//        {
-//            this.getWorld().addParticle(ModParticles.BRANLEX_PARTICLE, getX(), getY(), getZ(), getVelocity().x, getVelocity().y, getVelocity().z);
-//        }
-
         if(getWorld().isClient){
             for (int i = 0; i < 5; i++){
-                //this.getWorld().addParticle(ParticleTypes.CLOUD, getX(), getY(), getZ(), this.random.nextDouble() / 10, this.random.nextDouble() / 10, this.random.nextDouble() / 10);
+                this.getWorld().addParticle(ParticleTypes.CLOUD, getX(), getY(), getZ(), this.random.nextDouble() / 10, this.random.nextDouble() / 10, this.random.nextDouble() / 10);
             }
         }
-
-        if(lifeTime > 300)
-        {
-            this.remove(RemovalReason.DISCARDED);
-        }
-
-        lifeTime++;
     }
 }

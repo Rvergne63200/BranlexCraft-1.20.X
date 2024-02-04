@@ -14,15 +14,18 @@ import net.peg.branlexcraft.BranlexCraft;
 import net.peg.branlexcraft.item.custom.MagicSwordItem;
 
 public class ModItems {
+    public static final Item BRANLEX_BALL = registerItem("branlex_ball", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SHEET = registerItem("branlex_sheet", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_ROLL = registerItem("branlex_roll", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SWORD = registerItem("branlex_sword",
-            new MagicSwordItem(ModToolMaterials.BRANLEX, 6, -2.4f, new FabricItemSettings(), new ItemStack(Items.BONE_MEAL)));
+            new MagicSwordItem(ModToolMaterials.BRANLEX, 6, -2.4f, new FabricItemSettings(), new ItemStack(BRANLEX_BALL), new ItemStack(BRANLEX_BALL)));
+
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(BRANLEX_SHEET);
         entries.add(BRANLEX_ROLL);
         entries.add(BRANLEX_SWORD);
+        entries.add(BRANLEX_BALL);
     }
 
     private static Item registerItem(String name, Item item) {

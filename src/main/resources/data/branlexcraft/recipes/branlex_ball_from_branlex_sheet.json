@@ -1,0 +1,13 @@
+{
+  "type" : "minecraft:crafting_shapeless",
+  "category" : "building",
+  "ingredients" : [
+    {
+      "item" : "branlexcraft:branlex_sheet"
+    }
+  ],
+  "result": {
+    "item" : "branlexcraft:branlex_ball",
+    "count" : 1
+  }
+}
