@@ -41,11 +41,10 @@ public class MagicSwordItem extends SwordItem {
             }
 
             if(!world.isClient){
-                // EnchantmentHelper.getLevel(Enchantments.FIRE_ASPECT, handItem) > 0
                 BranlexProjectileEntity projectile = new BranlexProjectileEntity(world, user);
                 projectile.setItem(itemStack);
                 projectile.setDamage(projectileDamages);
-                projectile.setCanCramming(true);
+                projectile.setCanCramming(EnchantmentHelper.getLevel(Enchantments.FIRE_ASPECT, handItem) > 0);
                 projectile.setVelocity(user.getRotationVector().multiply(3.0f));
                 world.spawnEntity(projectile);
             }
