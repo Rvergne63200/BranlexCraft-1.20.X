@@ -18,7 +18,7 @@ public class ModItems {
     public static final Item BRANLEX_SHEET = registerItem("branlex_sheet", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_ROLL = registerItem("branlex_roll", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SWORD = registerItem("branlex_sword",
-            new MagicSwordItem(ModToolMaterials.BRANLEX, 6, -2.4f, new FabricItemSettings(), new ItemStack(BRANLEX_BALL), new ItemStack(BRANLEX_BALL)));
+            new MagicSwordItem(ModToolMaterials.BRANLEX, 8, -2.4f, 8.0f, new FabricItemSettings(), new ItemStack(BRANLEX_BALL), new ItemStack(BRANLEX_BALL)));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
