@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "branlexcraft:item/golden_branlex_sword"
+  }
+}

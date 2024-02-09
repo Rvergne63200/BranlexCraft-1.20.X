@@ -1,7 +1,9 @@
 {
   "item.branlexcraft.branlex_sheet": "Feuille de Branlex",
+  "item.branlexcraft.golden_branlex_sheet": "Feuille de Branlex d'Or",
   "item.branlexcraft.branlex_roll": "Rouleau de Branlex",
   "item.branlexcraft.branlex_sword": "Epée de Branlex",
+  "item.branlexcraft.golden_branlex_sword": "Epée de Branlex d'Or",
   "item.branlexcraft.branlex_ball": "Boule de Branlex",
   "itemgroup.branlexcraft": "BranlexCraft"
 }

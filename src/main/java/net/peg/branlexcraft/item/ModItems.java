@@ -17,15 +17,19 @@ public class ModItems {
     public static final Item BRANLEX_BALL = registerItem("branlex_ball", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SHEET = registerItem("branlex_sheet", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_ROLL = registerItem("branlex_roll", new Item(new FabricItemSettings()));
+    public static final Item GOLDEN_BRANLEX_SHEET = registerItem("golden_branlex_sheet", new Item(new FabricItemSettings()));
     public static final Item BRANLEX_SWORD = registerItem("branlex_sword",
             new MagicSwordItem(ModToolMaterials.BRANLEX, 8, -2.4f, 8.0f, new FabricItemSettings(), new ItemStack(BRANLEX_BALL), new ItemStack(BRANLEX_BALL)));
-
+    public static final Item GOLDEN_BRANLEX_SWORD = registerItem("golden_branlex_sword",
+            new MagicSwordItem(ModToolMaterials.BRANLEX, 8, -2.4f, 8.0f, new FabricItemSettings(), new ItemStack(BRANLEX_BALL), new ItemStack(BRANLEX_BALL)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(BRANLEX_SHEET);
         entries.add(BRANLEX_ROLL);
         entries.add(BRANLEX_SWORD);
         entries.add(BRANLEX_BALL);
+        entries.add(GOLDEN_BRANLEX_SHEET);
+        entries.add(GOLDEN_BRANLEX_SWORD);
     }
 
     private static Item registerItem(String name, Item item) {
