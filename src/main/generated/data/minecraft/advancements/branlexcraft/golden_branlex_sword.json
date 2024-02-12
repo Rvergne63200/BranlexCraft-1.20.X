@@ -1,0 +1,39 @@
+{
+  "criteria": {
+    "got_golden_branlex_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "branlexcraft:golden_branlex_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/background/adventure.png",
+    "description": {
+      "translate": "golden_branlex_sword_advancement_desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "branlexcraft:golden_branlex_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "golden_branlex_sword_advancement_title"
+    }
+  },
+  "requirements": [
+    [
+      "got_golden_branlex_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

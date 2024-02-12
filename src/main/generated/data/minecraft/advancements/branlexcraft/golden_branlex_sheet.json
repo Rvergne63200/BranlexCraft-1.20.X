@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "got_golden_branlex_sheet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "branlexcraft:golden_branlex_sheet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/background/adventure.png",
+    "description": {
+      "translate": "golden_branlex_advancement_desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "branlexcraft:golden_branlex_sheet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "golden_branlex_advancement_title"
+    }
+  },
+  "requirements": [
+    [
+      "got_golden_branlex_sheet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

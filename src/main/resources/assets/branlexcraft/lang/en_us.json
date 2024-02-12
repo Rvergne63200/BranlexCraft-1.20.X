@@ -5,5 +5,12 @@
   "item.branlexcraft.branlex_sword": "Branlex sword",
   "item.branlexcraft.golden_branlex_sword": "Golden branlex sword",
   "item.branlexcraft.branlex_ball": "Branlex ball",
-  "itemgroup.branlexcraft": "BranlexCraft"
+  "itemgroup.branlexcraft": "BranlexCraft",
+
+  "branlex_sword_advancement_title" :  "Professional Wanker !",
+  "branlex_sword_advancement_desc" : "A real wanker is born !!",
+  "golden_branlex_advancement_title" : "The Legendary Golden Branlex !",
+  "golden_branlex_advancement_desc" : "You found the golden branlex !",
+  "golden_branlex_sword_advancement_title" : "Wanker, but rich !",
+  "golden_branlex_sword_advancement_desc" : "Awesome, You became a rich wanker !"
 }

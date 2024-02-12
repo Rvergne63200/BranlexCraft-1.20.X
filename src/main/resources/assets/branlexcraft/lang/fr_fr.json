@@ -5,5 +5,11 @@
   "item.branlexcraft.branlex_sword": "Epée de Branlex",
   "item.branlexcraft.golden_branlex_sword": "Epée de Branlex d'Or",
   "item.branlexcraft.branlex_ball": "Boule de Branlex",
-  "itemgroup.branlexcraft": "BranlexCraft"
+  "itemgroup.branlexcraft": "BranlexCraft",
+  "branlex_sword_advancement_title" :  "Branleur professionnel !",
+  "branlex_sword_advancement_desc" : "Un vrai branleur est né !!",
+  "golden_branlex_advancement_title" : "Le Légendaire Branlex d'Or !",
+  "golden_branlex_advancement_desc" : "Tu as trouvé le Branlex d'Or !",
+  "golden_branlex_sword_advancement_title" : "Branleur, mais riche !",
+  "golden_branlex_sword_advancement_desc" : "Félicitation, tu as réussi à devenir un riche branleur !"
 }
